@@ -30,15 +30,15 @@
 
                 <small class="text-body-secondary">
                     <p>By. <a href="/posts?author={{ $posts[0]->author->username }}"
-                            class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a
+                            class="text-decoration-none ">{{ $posts[0]->author->name }}</a> in <a
                             href="/posts?category={{ $posts[0]->category->slug }}"
-                            class="text-decoration-none">{{ $posts[0]->category->name }}</a>
+                            class="text-decoration-none ">{{ $posts[0]->category->name }}</a>
                         {{ $posts[0]->created_at->diffForHumans() }}
                 </small>
                 </p>
 
                 <p class="card-text ">{{ $posts[0]->excerpt }}</p>
-                <a href="/posts/{{ $posts[0]->slug }}" class="btn btn-primary text-decoration-none">Read More</a>
+                <a href="/posts/{{ $posts[0]->slug }}" class="btn btn-outline-secondary text-decoration-none">Read More</a>
 
             </div>
         </div>
@@ -60,19 +60,19 @@
                                 alt="{{ $post->category->name }}">
                             <div class="card-body">
 
-                                <h5 class="card-title text-truncate">
+                                <h5 class="card-title text-truncate ">
                                     <a href="/posts/{{ $post->slug }}"
-                                        class="text-decoration-none">{{ $post->title }}</a>
+                                        class="text-decoration-none ">{{ $post->title }}</a>
                                 </h5>
 
                                 <p>By. <a href="/posts?author={{ $post->author->username }}"
-                                        class="text-decoration-none">{{ $post->author->name }}</a> </p>
+                                        class="text-decoration-none ">{{ $post->author->name }}</a> </p>
                                 <div class="text-truncate">
                                     <p class="card-text">{{ $post->excerpt }}</p>
                                 </div>
 
                                 <div class="text-center mt-3">
-                                    <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More</a>
+                                    <a href="/posts/{{ $post->slug }}" class="btn btn-outline-secondary">Read More</a>
 
                                 </div>
                             </div>
