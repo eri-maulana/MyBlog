@@ -1,16 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container ">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-8 mb-3">
 
                 <h2 class="text-center">{{ $post->title }}</h2>
 
                 <small class="text-muted">
-                    <p class="text-center">By. <a href="/authors/{{ $post->author->username }}"
+                    <p class="text-center">By. <a href="/posts?author={{ $post->author->username }}"
                             class="text-decoration-none">{{ $post->author->name }}</a> in <a
-                            href="/categories/{{ $post->category->slug }}"
+                            href="/posts?category={{ $post->category->slug }}"
                             class="text-decoration-none">{{ $post->category->name }}</a></p>
                 </small>
 

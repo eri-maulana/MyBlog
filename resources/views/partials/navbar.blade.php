@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary"  data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top mb-5"  data-bs-theme="dark">
    <div class="container">
      <a class="navbar-brand" href="/">My Blog</a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
