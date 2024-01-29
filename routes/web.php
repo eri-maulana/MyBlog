@@ -59,3 +59,4 @@ Route::get('/login', [LoginController::class, 'index']);
 
 // route register
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
