@@ -10,24 +10,43 @@
                @csrf
                <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
-                  <input class="form-control" type="text" name="title" id="title" autofocus>
+                  <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" id="title" value="{{ old('title') }}" required autofocus>
+                  @error('title')
+                     <div class="invalid-feedback">
+                        {{ $message }}
+                     </div>
+                  @enderror
                </div>
                <div class="mb-3">
                   <label for="slug" class="form-label">Slug</label>
-                  <input class="form-control" type="text" name="slug" id="slug" >
+                  <input class="form-control @error('slug') is-invalid @enderror" type="text" name="slug" id="slug" value="{{ old('slug') }}" required>
+                  @error('slug')
+                     <div class="invalid-feedback">
+                        {{ $message }}
+                     </div>
+                  @enderror
                </div>
                <div class="mb-3">
                   <label for="category" class="form-label">Category</label>
                   <select class="form-select" name="category_id" id="category">
                      @foreach ($categories as $category)
+                        @if (old('category_id') == $category->id)
+                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        @else
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endif
                      @endforeach
                   </select>
                </div>
                <div class="mb-3">
                   <label for="body" class="form-label">Body</label>
-                  <input type="hidden" id="body" name="body">
+                  <input type="hidden" class="@error('body') is-invalid @enderror" id="body" name="body" value="{{ old('body') }}">
                   <trix-editor class="form-control" input="body"></trix-editor>
+                  @error('body')
+                     <div class="invalid-feedback">
+                        {{ $message }}
+                     </div>
+                  @enderror
                </div>
                <div class="text-center">
                   <button type="submit" class="btn btn-outline-primary mb-3 text-center">Create Post</button>
