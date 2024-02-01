@@ -18,16 +18,19 @@ class DatabaseSeeder extends Seeder
     {
 
         // Pembuatan User / Author 
-        // User::create([
-        //     'name' => 'Eri Maulana',
-        //     'email' => 'eri@gmail.com',
-        //     'password' => bcrypt('12345')
-        // ]);
-        // User::create([
-        //     'name' => 'Putri Narila',
-        //     'email' => 'putri@gmail.com',
-        //     'password' => bcrypt('12345')
-        // ]);
+        User::create([
+            'name' => 'Eri Maulana',
+            'username' => 'eri',
+            'email' => 'eri@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+        User::create([
+            'name' => 'Putri Narila',
+            'username' => 'putri',
+            'email' => 'putri@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
         User::factory(5)->create();
 
         // Pembuatan Category
@@ -45,7 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Pembuatan data posts
-        Post::factory(10)->create();
+        Post::factory(20)->create();
         // Post::create([
         //     'title' => 'Post Ke Satu',
         //     'category_id' => 1,
