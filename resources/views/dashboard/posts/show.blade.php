@@ -6,10 +6,15 @@
             <div class="row ">
                 <div class="col-lg-10">
                     <h1>{{ $post->title }}</h1>
-                    <small class="text-secondary d-flex gap-2">
-                        <a href="/dashboard/posts" class="btn btn-info"><i class="bi bi-arrow-left"></i> Back to all post</a>
-                        <a href="" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
-                        <a href="" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+                    <small class="text-secondary d-flex gap-2 my-3">
+                        <a href="/dashboard/posts" class="btn btn-info text-white"><i class="bi bi-arrow-left"></i> Back to all post</a>
+                        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i> Edit</a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger text-white"
+                                onclick="return comfirm('Are you sure?')"><i class="bi bi-trash"></i> Delete</button>
+                        </form>
                     </small>
                     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}"
                         alt="{{ $post->category->name }}" class="img-fluid mt-3">
