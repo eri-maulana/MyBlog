@@ -27,11 +27,11 @@
             @if ($posts[0]->image)
                 <div class="text-center" style="max-height: 400px; overflow:hidden">
                     <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}"
-                        class="img-fluid">
+                        class="img-fluid mt-3">
                 </div>
             @else
                 <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}"
-                    alt="{{ $posts[0]->category->name }}" class="img-fluid">
+                    alt="{{ $posts[0]->category->name }}" class="img-fluid  mt-3">
             @endif
 
             <div class="card-body text-center">
